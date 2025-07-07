@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Client {
 
+    private Integer id;
     private String name;
     private final String cpf;
     private String address;
