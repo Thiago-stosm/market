@@ -3,10 +3,10 @@ package model;
 import java.time.LocalDate;
 
 public class Employee{
-    private final Integer id;
+    private final Integer employeeId;
     private String name;
     private String cpf;
-    private String fone;
+    private String phone;
     private String email;
     private String sex;
     private String address;
