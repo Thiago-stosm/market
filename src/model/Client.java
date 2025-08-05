@@ -1,17 +1,23 @@
 package model;
 
+import testes.IdGenerator;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Client{
-    private final Integer clientId;
+
+    private final Integer id;
+    private final String cpf;
     private String name;
-    private String cpf;
-    private String phone;
     private String email;
-    private String sex;
-    private String address;
-    private final LocalDate birthDate;
     private List<Purchase> registeredPurchases;
+
+    public Client(String cpf, String name, String email){
+        this.id = IdGenerator.generateId();
+        this.cpf = cpf;
+        this.name = name;
+        this.email = email;
+    }
 }
