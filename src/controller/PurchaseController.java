@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class PurchaseController {
     private Purchase purchase;
     public static void addProduct(){
-        while(true){
+        String answer = "";
+        do{
             Scanner sc = new Scanner(System.in);
 
             System.out.print("Enter the product ID: ");
@@ -18,11 +19,9 @@ public class PurchaseController {
             int productQtd = sc.nextInt();
 
             System.out.print("Wish to register more any product? Y/N ");
-            String answer = sc.next();
+            answer = sc.next();
+            sc.nextLine();
 
-            if (answer.equals('N')){
-                break;
-            }
-        }
+        }while(!answer.equals("N"));
     }
 }
