@@ -2,6 +2,7 @@ package model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ public class Purchase {
     private final Integer client_id;
     private final Integer client_cpf;
     private final BigDecimal total_price;
+    private final Date data = new Date();
     private final List<Map> prod_id_price = new ArrayList<>();
 
     public Purchase(Integer id, Integer client_id, Integer client_cpf, BigDecimal total_price){
