@@ -1,0 +1,53 @@
+CREATE DATABASE market
+
+USE market
+
+CREATE TABLE admin(
+	id int primary key,
+	cpf varchar(100) NOT NULL,
+	name varchar (100) NOT NULL,
+	email varchar (100) NOT NULL,
+	password varchar (100) NOT NULL
+);
+
+CREATE TABLE client(
+	id int primary key,
+	cpf varchar(100) NOT NULL,
+	name varchar (100) NOT NULL,
+	email varchar (100) NOT NULL,
+	password varchar (100) NOT NULL
+);
+
+CREATE TABLE employee(
+	id int primary key,
+	cpf varchar(100) NOT NULL,
+	name varchar (100) NOT NULL,
+	email varchar (100) NOT NULL
+);
+
+CREATE TABLE product (
+	id int primary key,
+	name varchar(100) NOT NULL,
+	producer varchar(100) NOT NULL,
+	description varchar (200) NOT NULL,
+	category varchar (100) NOT NULL,
+	price DECIMAL(10,2) NOT NULL,
+	storage int NOT NULL
+);
+
+CREATE TABLE purchase(
+	id int primary key AUTO_INCREMENT,
+	client_id int,
+	date DATETIME NOT NULL,
+	total_price DECIMAL(10,2) NOT NULL,
+	FOREIGN KEY(client_id) REFERENCES client(id)
+);
+
+CREATE TABLE purchase_product(
+	product_id int NOT NULL,
+	product_qtd int NOT NULL,
+	purchase_id int,
+	PRIMARY KEY (purchase_id, product_id),
+	FOREIGN KEY(product_id) REFERENCES product(id),
+	FOREIGN KEY(purchase_id) REFERENCES purchase(id)
+);
