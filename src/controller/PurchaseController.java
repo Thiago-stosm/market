@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class PurchaseController {
     private Purchase purchase;
+
     public static void addProduct(){
         String answer = "";
         do{

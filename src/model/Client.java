@@ -12,7 +12,6 @@ public class Client{
     private final String cpf;
     private String name;
     private String email;
-    private List<Purchase> registeredPurchases;
 
     public Client(String cpf, String name, String email){
         this.id = IdGenerator.generateId();
